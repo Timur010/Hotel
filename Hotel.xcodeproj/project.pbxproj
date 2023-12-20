@@ -11,6 +11,8 @@
 		392787702B32D584009D8A27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927876F2B32D584009D8A27 /* ContentView.swift */; };
 		392787722B32D586009D8A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392787712B32D586009D8A27 /* Assets.xcassets */; };
 		392787752B32D586009D8A27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392787742B32D586009D8A27 /* Preview Assets.xcassets */; };
+		3927877D2B32D609009D8A27 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927877C2B32D609009D8A27 /* NetworkingManager.swift */; };
+		392787862B32E9F6009D8A27 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392787852B32E9F6009D8A27 /* NetworkingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		3927876F2B32D584009D8A27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		392787712B32D586009D8A27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		392787742B32D586009D8A27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3927877C2B32D609009D8A27 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		392787852B32E9F6009D8A27 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +55,11 @@
 		3927876C2B32D584009D8A27 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
-				3927876D2B32D584009D8A27 /* HotelApp.swift */,
-				3927876F2B32D584009D8A27 /* ContentView.swift */,
-				392787712B32D586009D8A27 /* Assets.xcassets */,
+				3927877B2B32D5EF009D8A27 /* Network  */,
+				392787802B32E95D009D8A27 /* View */,
+				3927877F2B32E951009D8A27 /* Model */,
+				392787832B32E9D6009D8A27 /* Common */,
+				392787812B32E974009D8A27 /* System */,
 				392787732B32D586009D8A27 /* Preview Content */,
 			);
 			path = Hotel;
@@ -65,6 +71,54 @@
 				392787742B32D586009D8A27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3927877B2B32D5EF009D8A27 /* Network  */ = {
+			isa = PBXGroup;
+			children = (
+				3927877C2B32D609009D8A27 /* NetworkingManager.swift */,
+			);
+			path = "Network ";
+			sourceTree = "<group>";
+		};
+		3927877F2B32E951009D8A27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		392787802B32E95D009D8A27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3927876F2B32D584009D8A27 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		392787812B32E974009D8A27 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				392787712B32D586009D8A27 /* Assets.xcassets */,
+				3927876D2B32D584009D8A27 /* HotelApp.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		392787832B32E9D6009D8A27 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				392787842B32E9E5009D8A27 /* Enum */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		392787842B32E9E5009D8A27 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				392787852B32E9F6009D8A27 /* NetworkingError.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +191,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3927877D2B32D609009D8A27 /* NetworkingManager.swift in Sources */,
 				392787702B32D584009D8A27 /* ContentView.swift in Sources */,
+				392787862B32E9F6009D8A27 /* NetworkingError.swift in Sources */,
 				3927876E2B32D584009D8A27 /* HotelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
