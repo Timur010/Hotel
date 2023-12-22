@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var vm = HomeViewModel()
+    @StateObject var vm = HomeViewModel(service: HomeDataService())
     var body: some View {
         VStack (spacing: 0) {
             ScrollView (showsIndicators: false) {
@@ -63,9 +63,9 @@ extension HomeView {
             Text("Отель")
                 .font(.system(size: 18, weight: .medium))
             ZStack (alignment: .bottom) {
-                TabView(selection: $vm.curr.animation()) {
+                TabView(selection: $vm.selectedBanner.animation()) {
                     ForEach(0..<vm.baner.count, id: \.self)  { image in
-                        BannerView(image: vm.baner[image])
+                        BannerView(image: vm.baner[image] ?? "")
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
@@ -74,7 +74,7 @@ extension HomeView {
                 HStack {
                     ForEach(vm.baner.indices, id: \.self) { index in
                         Circle()
-                            .fill(vm.curr == index ? Color.black : Color.gray.opacity(1 - Double(abs(vm.curr - index)) / Double(vm.baner.count)))
+                            .fill(vm.selectedBanner == index ? Color.black : Color.gray.opacity(1 - Double(abs(vm.selectedBanner - index)) / Double(vm.baner.count)))
                             .frame(width: 7, height: 7)
                     }
                 }
@@ -92,7 +92,7 @@ extension HomeView {
                     .resizable()
                     .foregroundStyle(Color.orangeColor)
                     .frame(width: 15, height: 15)
-                Text("5 превосхожно")
+                Text(" \(vm.hotelInfo.rating ?? 0) " + (vm.hotelInfo.ratingName ?? ""))
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(Color.orangeColor)
             }
@@ -106,20 +106,22 @@ extension HomeView {
         VStack {
             HStack {
                 VStack (alignment: .leading) {
-                    Text("Steigenberger Makadi")
+                    Text(vm.hotelInfo.name ?? "")
                         .font(.system(size: 22, weight: .medium))
-                    Text("Madinat Makadi, Safaga Road, Makadi Bay, Египет")
+                        .lineLimit(1)
+                    Text(vm.hotelInfo.adress ?? "")
                         .font(.system(size: 14, weight: .medium))
                         .foregroundStyle(Color.blue)
                 }
                 Spacer()
             }
             HStack (alignment: .bottom) {
-                Text("от 134 673 ₽")
+                Text("от \(vm.hotelInfo.minimalPrice ?? 0)")
                     .font(.system(size: 30, weight: .semibold))
-                Text("за тур с перелётом")
+                Text(vm.hotelInfo.priceForIt ?? "fwwrgwregwergw")
                     .font(.system(size: 16))
                     .foregroundStyle(Color.gray)
+                    .baselineOffset((16) / 4)
                 Spacer()
             }
             .padding(.top)
@@ -131,7 +133,7 @@ extension HomeView {
                 .font(.system(size: 22, weight: .medium))
             TagLayout() {
                 ForEach(vm.categorie, id: \.self) { item in
-                    Text(item)
+                    Text(item ?? "")
                         .font(.system(size: 16, weight: .medium))
                         .padding(.horizontal, 10)
                         .padding(.vertical, 5)
@@ -144,7 +146,7 @@ extension HomeView {
     }
     private var detailDescription: some View {
         VStack {
-            Text("Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!")
+            Text(vm.hotelInfo.aboutTheHotel?.description ?? "")
                 .font(.system(size: 16, weight: .regular))
             
             VStack (alignment: .trailing, spacing: 10) {

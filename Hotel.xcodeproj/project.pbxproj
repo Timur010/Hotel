@@ -19,6 +19,9 @@
 		39687E4B2B34B67800B75C44 /* LayoutSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E4A2B34B67800B75C44 /* LayoutSubviews.swift */; };
 		39687E4D2B34B7BF00B75C44 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E4C2B34B7BF00B75C44 /* BannerView.swift */; };
 		39687E502B34C07400B75C44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E4F2B34C07400B75C44 /* HomeViewModel.swift */; };
+		39687E602B35748E00B75C44 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E5F2B35748E00B75C44 /* Hotel.swift */; };
+		39687E632B3574C700B75C44 /* HomeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E622B3574C700B75C44 /* HomeDataService.swift */; };
+		39687E662B35781A00B75C44 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 39687E652B35781A00B75C44 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,8 @@
 		39687E4A2B34B67800B75C44 /* LayoutSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSubviews.swift; sourceTree = "<group>"; };
 		39687E4C2B34B7BF00B75C44 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		39687E4F2B34C07400B75C44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		39687E5F2B35748E00B75C44 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		39687E622B3574C700B75C44 /* HomeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39687E662B35781A00B75C44 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +57,8 @@
 		392267D72B342EC500B831E6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				39687E4E2B34C06300B75C44 /* ViewModel */,
 				392267D82B342ED100B831E6 /* View */,
+				39687E4E2B34C06300B75C44 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -116,6 +122,7 @@
 		3927877B2B32D5EF009D8A27 /* Network  */ = {
 			isa = PBXGroup;
 			children = (
+				39687E612B3574AD00B75C44 /* Service */,
 				3927877C2B32D609009D8A27 /* NetworkingManager.swift */,
 			);
 			path = "Network ";
@@ -124,6 +131,7 @@
 		3927877F2B32E951009D8A27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				39687E5F2B35748E00B75C44 /* Hotel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +187,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		39687E612B3574AD00B75C44 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				39687E622B3574C700B75C44 /* HomeDataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +211,9 @@
 			dependencies = (
 			);
 			name = Hotel;
+			packageProductDependencies = (
+				39687E652B35781A00B75C44 /* SDWebImageSwiftUI */,
+			);
 			productName = Hotel;
 			productReference = 3927876A2B32D584009D8A27 /* Hotel.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +242,9 @@
 				Base,
 			);
 			mainGroup = 392787612B32D584009D8A27;
+			packageReferences = (
+				39687E642B35781A00B75C44 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 3927876B2B32D584009D8A27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +279,10 @@
 				392267DB2B34AFD300B831E6 /* Color.swift in Sources */,
 				39687E4D2B34B7BF00B75C44 /* BannerView.swift in Sources */,
 				39687E4B2B34B67800B75C44 /* LayoutSubviews.swift in Sources */,
+				39687E632B3574C700B75C44 /* HomeDataService.swift in Sources */,
 				392267DD2B34B22200B831E6 /* SwitchDetailedView.swift in Sources */,
 				3927876E2B32D584009D8A27 /* HotelApp.swift in Sources */,
+				39687E602B35748E00B75C44 /* Hotel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +490,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		39687E642B35781A00B75C44 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39687E652B35781A00B75C44 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39687E642B35781A00B75C44 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 392787622B32D584009D8A27 /* Project object */;
 }

@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct BannerView: View {
     var image: String
     var body: some View {
         ZStack {
-            Image(image)
+            WebImage(url: URL(string: image))
                 .resizable()
                 .frame(height: 257)
+                .cornerRadius(15)
         }
     }
 }
