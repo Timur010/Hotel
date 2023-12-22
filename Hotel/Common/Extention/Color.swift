@@ -23,4 +23,9 @@ extension Color {
     static var lightGrayColor: Color {
         return Color("CustomLightGrayColor")
     }
+    static var lightBlueColor: Color {
+        return Color("CustomLightBlueColor")
+    }
 }
+
+

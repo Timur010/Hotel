@@ -2,24 +2,39 @@
 //  BannerView.swift
 //  Hotel
 //
-//  Created by Timur Kadiev on 21.12.2023.
+//  Created by Timur Kadiev on 22.12.2023.
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
 
 struct BannerView: View {
-    var image: String
+    var baner: [String?]
+    @State var selectedBanner = 0
     var body: some View {
-        ZStack {
-            WebImage(url: URL(string: image))
-                .resizable()
-                .frame(height: 257)
-                .cornerRadius(15)
+        ZStack (alignment: .bottom) {
+            TabView(selection: $selectedBanner.animation()) {
+                ForEach(0..<baner.count, id: \.self)  { image in
+                    BannerImageView(image: baner[image] ?? "")
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .frame(height: 257)
+            
+            HStack {
+                ForEach(baner.indices, id: \.self) { index in
+                    Circle()
+                        .fill(selectedBanner == index ? Color.black : Color.gray.opacity(1 - Double(abs(selectedBanner - index)) / Double(baner.count)))
+                        .frame(width: 7, height: 7)
+                }
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 5)
+            .background(Color.white.cornerRadius(5))
+            .padding(.bottom, 8)
         }
     }
 }
 
 #Preview {
-    BannerView(image: "Image")
+    BannerView(baner: [])
 }

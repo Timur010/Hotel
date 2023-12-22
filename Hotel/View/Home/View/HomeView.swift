@@ -28,7 +28,7 @@ struct HomeView: View {
                 .foregroundStyle(Color.white)
                 .frame(width: UIScreen.main.bounds.width - 32)
                 .padding(.vertical, 15)
-                .background(Color.blue.cornerRadius(20))
+                .background(Color.blue.cornerRadius(15))
                 .padding(.top, 12)
                 .padding(.bottom, 28)
         }
@@ -62,27 +62,7 @@ extension HomeView {
         VStack {
             Text("Отель")
                 .font(.system(size: 18, weight: .medium))
-            ZStack (alignment: .bottom) {
-                TabView(selection: $vm.selectedBanner.animation()) {
-                    ForEach(0..<vm.baner.count, id: \.self)  { image in
-                        BannerView(image: vm.baner[image] ?? "")
-                    }
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: 257)
-                
-                HStack {
-                    ForEach(vm.baner.indices, id: \.self) { index in
-                        Circle()
-                            .fill(vm.selectedBanner == index ? Color.black : Color.gray.opacity(1 - Double(abs(vm.selectedBanner - index)) / Double(vm.baner.count)))
-                            .frame(width: 7, height: 7)
-                    }
-                }
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(Color.white.cornerRadius(5))
-                .padding(.bottom, 8)
-            }
+            BannerView(baner: vm.baner)
         }
     }
     private var grade: some View {
@@ -116,7 +96,7 @@ extension HomeView {
                 Spacer()
             }
             HStack (alignment: .bottom) {
-                Text("от \(vm.hotelInfo.minimalPrice ?? 0)")
+                Text("от \(vm.hotelInfo.minimalPrice ?? 0) ₽")
                     .font(.system(size: 30, weight: .semibold))
                 Text(vm.hotelInfo.priceForIt ?? "fwwrgwregwergw")
                     .font(.system(size: 16))
@@ -131,17 +111,7 @@ extension HomeView {
         VStack {
             Text("Об отеле")
                 .font(.system(size: 22, weight: .medium))
-            TagLayout() {
-                ForEach(vm.categorie, id: \.self) { item in
-                    Text(item ?? "")
-                        .font(.system(size: 16, weight: .medium))
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
-                        .background(Color.backgroundСustomСolor)
-                        .foregroundColor(Color.lightGrayColor)
-                        .cornerRadius(5)
-                }
-            }
+            CategoriesView(categories: vm.categorie)
         }
     }
     private var detailDescription: some View {
