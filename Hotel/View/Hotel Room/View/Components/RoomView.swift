@@ -51,6 +51,8 @@ struct RoomView: View {
             }
         }
         .padding()
+        .background(Color.white.cornerRadius(12))
+        
     }
 }
 

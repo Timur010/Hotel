@@ -29,6 +29,8 @@
 		39687E762B358DC200B75C44 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E752B358DC200B75C44 /* Room.swift */; };
 		39687E782B358F4F00B75C44 /* HotelRoomDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E772B358F4F00B75C44 /* HotelRoomDataService.swift */; };
 		39687E7B2B358FEB00B75C44 /* HotelRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39687E7A2B358FEB00B75C44 /* HotelRoomViewModel.swift */; };
+		39C947C72B35946A002F762D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C947C62B35946A002F762D /* Coordinator.swift */; };
+		39C947C92B3596CA002F762D /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C947C82B3596CA002F762D /* CoordinatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		39687E752B358DC200B75C44 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		39687E772B358F4F00B75C44 /* HotelRoomDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRoomDataService.swift; sourceTree = "<group>"; };
 		39687E7A2B358FEB00B75C44 /* HotelRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRoomViewModel.swift; sourceTree = "<group>"; };
+		39C947C62B35946A002F762D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		39C947C82B3596CA002F762D /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		3927876C2B32D584009D8A27 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
+				39C947CA2B35E757002F762D /* Coordinator */,
 				3927877B2B32D5EF009D8A27 /* Network  */,
 				392787802B32E95D009D8A27 /* View */,
 				3927877F2B32E951009D8A27 /* Model */,
@@ -248,6 +253,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		39C947CA2B35E757002F762D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				39C947C62B35946A002F762D /* Coordinator.swift */,
+				39C947C82B3596CA002F762D /* CoordinatorView.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39687E6C2B35824600B75C44 /* BannerView.swift in Sources */,
+				39C947C92B3596CA002F762D /* CoordinatorView.swift in Sources */,
 				39687E742B358D0E00B75C44 /* RoomView.swift in Sources */,
 				3927877D2B32D609009D8A27 /* NetworkingManager.swift in Sources */,
 				39687E762B358DC200B75C44 /* Room.swift in Sources */,
@@ -336,6 +351,7 @@
 				39687E712B35894700B75C44 /* CategoriesView.swift in Sources */,
 				392267DB2B34AFD300B831E6 /* Color.swift in Sources */,
 				39687E782B358F4F00B75C44 /* HotelRoomDataService.swift in Sources */,
+				39C947C72B35946A002F762D /* Coordinator.swift in Sources */,
 				39687E4D2B34B7BF00B75C44 /* BannerImageView.swift in Sources */,
 				39687E4B2B34B67800B75C44 /* LayoutSubviews.swift in Sources */,
 				39687E7B2B358FEB00B75C44 /* HotelRoomViewModel.swift in Sources */,

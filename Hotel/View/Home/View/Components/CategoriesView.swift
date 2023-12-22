@@ -14,7 +14,7 @@ struct CategoriesView: View {
             ForEach(categories, id: \.self) { item in
                 Text(item ?? "")
                     .font(.system(size: 16, weight: .medium))
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 13)
                     .padding(.vertical, 5)
                     .background(Color.backgroundСustomСolor)
                     .foregroundColor(Color.lightGrayColor)

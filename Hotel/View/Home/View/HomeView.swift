@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var vm = HomeViewModel(service: HomeDataService())
+    @EnvironmentObject var coordinator: Coordinator
     var body: some View {
         VStack (spacing: 0) {
             ScrollView (showsIndicators: false) {
@@ -22,15 +23,19 @@ struct HomeView: View {
             .background(Color.white.cornerRadius(0))
             
             Divider()
-           
-            Text("К выбору номера")
-                .font(.system(size: 16, weight: .medium))
-                .foregroundStyle(Color.white)
-                .frame(width: UIScreen.main.bounds.width - 32)
-                .padding(.vertical, 15)
-                .background(Color.blue.cornerRadius(15))
-                .padding(.top, 12)
-                .padding(.bottom, 28)
+            Button {
+                coordinator.push(.Room)
+            } label: {
+                Text("К выбору номера")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundStyle(Color.white)
+                    .frame(width: UIScreen.main.bounds.width - 32)
+                    .padding(.vertical, 15)
+                    .background(Color.blue.cornerRadius(15))
+                    .padding(.top, 12)
+                    .padding(.bottom, 28)
+            }
+            
         }
         .ignoresSafeArea()
     }
