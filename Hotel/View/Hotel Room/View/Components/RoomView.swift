@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RoomView: View {
     var roomData: Room
+    var action: () -> ()
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             BannerView(baner: roomData.imageUrls)
@@ -37,18 +38,8 @@ struct RoomView: View {
                     .font(.system(size: 16, weight: .regular))
                     .baselineOffset((16) / 4)
             }
-            Button {
-                
-            } label: {
-                Text("Выбрать номер")
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(Color.white)
-                    .frame(width: UIScreen.main.bounds.width - 32)
-                    .padding(.vertical, 15)
-                    .background(Color.blue.cornerRadius(15))
-                    .padding(.top, 12)
-                    .padding(.bottom, 28)
-            }
+            CustomButtonView(title: "Выбрать номер", action: action)
+                .padding(.bottom, -28)
         }
         .padding()
         .background(Color.white.cornerRadius(12))
@@ -57,5 +48,5 @@ struct RoomView: View {
 }
 
 #Preview {
-    RoomView(roomData: Room.mockRoom)
+    RoomView(roomData: Room.mockRoom, action: ({}))
 }

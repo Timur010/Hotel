@@ -14,12 +14,12 @@ struct BannerImageView: View {
         ZStack {
             WebImage(url: URL(string: image))
                 .resizable()
-                .frame(height: 257)
+                .frame(height: UIScreen.main.bounds.height / 3.3)
                 .cornerRadius(15)
         }
     }
 }
 
 #Preview {
-    BannerImageView(image: "Image")
+    BannerImageView(image: "")
 }

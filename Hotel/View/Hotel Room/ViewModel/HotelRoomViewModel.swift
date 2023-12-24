@@ -9,19 +9,19 @@ import Foundation
 import Combine
 
 class HotelRoomViewModel: ObservableObject {
-    private var HotelRoomService: HotelRoomDataService
+    private var hotelRoomService: HotelRoomDataService
     private var cancellables = Set<AnyCancellable>()
     
     @Published var hotelRoomInfo: RoomData
 
     init(service: HotelRoomDataService) {
-        self.HotelRoomService = service
+        self.hotelRoomService = service
         self.hotelRoomInfo = RoomData(rooms: [])
         addSubscribers()
     }
     
     private func addSubscribers() {
-        HotelRoomService.$roomData
+        hotelRoomService.$roomData
             .sink { [weak self] ( room ) in
                 self?.hotelRoomInfo = room
             }

@@ -39,9 +39,11 @@ class Coordinator: ObservableObject {
             HotelRoomsView()
                 .navigationTitle("Steigenberger Makadi")
         case .Booking:
-            Text("")
+            BookingView()
+                .navigationTitle("Бронирование")
         case .Paid:
-            Text("")
+            PaidView()
+                .navigationTitle("Заказ оплачен")
         }
     }
 }

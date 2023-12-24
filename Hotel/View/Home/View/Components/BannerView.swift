@@ -18,7 +18,7 @@ struct BannerView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(height: 257)
+            .frame(height: UIScreen.main.bounds.height / 3.3)
             
             HStack {
                 ForEach(baner.indices, id: \.self) { index in

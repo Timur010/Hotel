@@ -26,6 +26,18 @@ extension Color {
     static var lightBlueColor: Color {
         return Color("CustomLightBlueColor")
     }
+    static var errorColor: Color {
+        return Color("ErrorColor")
+    }
+    static var textFieldColor: Color {
+        return Color("TextFieldColor")
+    }
+    static var imageBackgraundColor: Color {
+        return Color("ImageBackgraundColor")
+    }
+    static var scrollViewColor: Color {
+        return Color("ScrollViewColor")
+    }
 }
 
 

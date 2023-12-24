@@ -22,7 +22,7 @@ class NetworkingManager {
               response.statusCode >= 200 && response.statusCode < 300 else {
             throw NetworkingError.badURlResponse(url: url)
         }
-        print(output.data)
+       
         return output.data
     }
     

@@ -30,7 +30,6 @@ class HomeViewModel: ObservableObject {
                 self?.hotelInfo = hotel
                 self?.baner = hotel.imageUrls
                 self?.categorie = hotel.aboutTheHotel?.peculiarities ?? []
-                print(hotel)
             }
             .store(in: &cancellables)
     }

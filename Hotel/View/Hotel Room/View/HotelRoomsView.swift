@@ -10,7 +10,7 @@ import SwiftUI
 struct HotelRoomsView: View {
     @StateObject var vm = HotelRoomViewModel(service: HotelRoomDataService())
     @Environment(\.presentationMode) var presentationMode
-
+    @EnvironmentObject var coordinator: Coordinator
     var body: some View {
         VStack (spacing: 0) {
             Divider()
@@ -18,16 +18,19 @@ struct HotelRoomsView: View {
                 Spacer()
                     .frame(width: 8)
                 ForEach(vm.hotelRoomInfo.rooms, id: \.self) { info in
-                    RoomView(roomData: info)
+                    RoomView(roomData: info) {
+                        coordinator.push(.Booking)
+                    }
                 }
             }
+            .frame(width: UIScreen.main.bounds.width)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image("Arrow Left")
             })
-            .background(Color.gray.opacity(0.1))
+            .background(Color.scrollViewColor)
             
         }
         .background(Color.white)
